@@ -1,0 +1,50 @@
+<div class="container">
+  <form [formGroup]='studentform'>
+    <div class="row clear">
+      <div class="fl">
+          <label>First Name: </label>
+          <input type="text" formControlName="firstname" id="firstname" name="firstname" />
+          <span class="errorLogMsg" *ngIf="studentform.controls.firstname.hasError('required') && studentform.controls.firstname.touched"> *Please fill first name </span>
+          <span class="errorLogMsg" *ngIf="studentform.controls.firstname.hasError('minlength')"> *Name should atleast be 5 characters </span>
+      </div>
+      <div class="fl">
+          <input type="text" formControlName="lastname" id="lastname" name="lastname" placeholder="Last name" />
+      </div>
+    </div>
+    <div class="row clear">
+        <label>Password: </label>
+        <input type="password" formControlName="password" id="password" name="password" />  
+    </div>
+    <div class="row clear">
+        <label>Email: </label>
+        <input type="text" formControlName="email" id="email" name="email" />
+    </div>
+    <div class="row clear">
+        <label>Age: </label>
+        <input type="text" formControlName="age" id="age" name="age" />
+    </div>
+    <div class="row clear">
+        <label>Join date: </label>
+        <input type="text" formControlName="joindate" id="joindate" name="joindate" />
+    </div>
+    <div class="row clear">
+        <label>End date: </label>
+        <input type="text" formControlName="enddate" id="enddate" name="enddate" />
+    </div>
+    <div class="row formFooter clear">
+        <input type="submit" id="submit" name="submit" [disabled]='!studentform.valid' (click)="save()" />
+        <input type="button" id="reset" name="reset" value="Reset" (click)="getStudentReset()" />
+    </div>
+    <div class="row clear">
+      <p class="errorLog">
+        {{studentform.value | json}}
+      </p>
+      <p class="errorLog">
+        {{studentform.controls.firstname.errors | json}}
+      </p>
+        <p class="errorLogMsg">
+            <span class="errorLogMsg" *ngIf="studentform.controls.firstname.hasError('notvalidDate')"> True </span>
+        </p>
+    </div>
+  </form>
+</div>

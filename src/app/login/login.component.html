@@ -1,0 +1,18 @@
+<div class="container">
+    <form [formGroup]='loginform'>
+        <div class="row clear">
+            <div class="fl">
+                <label>Username: </label>
+                <input type="text" formControlName="username" id="username" name="username" />
+            </div>
+        </div>
+        <div class="row clear">
+            <label>Password: </label>
+            <input type="password" formControlName="password" id="password" name="password" />
+        </div>
+        <div class="row formFooter clear">
+            <input type="submit" id="submit" name="submit" (click)="login(loginform.value)" />
+            <input type="button" id="reset" name="reset" value="Reset" (click)="loginReset()" />
+        </div>
+    </form>
+</div>

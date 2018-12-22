@@ -1,0 +1,97 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+header,
+footer {
+    position: fixed;
+    padding: 10px;
+    background-color: #989bfb;
+    width: 100%;
+}
+
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    padding: 5px 10px;
+    /* background-color:rgb(7, 121, 105); */
+    color: #000;
+}
+
+
+/********** Helper class starts **********/
+
+.clear:after,
+.clear:before {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.active {
+    color: #fff;
+    border-bottom: 2px solid #ff0000;
+    /* background-color: rgb(49, 175, 144); */
+}
+
+.fl {
+    float: left;
+}
+
+
+/********** Helper class ends **********/
+
+#logo img {
+    height: 40px;
+}
+
+#logo span {
+    display: block;
+    background: #fff;
+    padding: 5px;
+    height: 48px;
+    width: 49px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+/*@import '../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css';*/
+
+
+/* menu{
+    margin-top:65px;
+} */

@@ -1,0 +1,11 @@
+<table mat-table  class="mat-elevation-z8">
+  <tr mat-row *ngFor="let record of studentArray; trackBy: studentRecord">
+    <td mat-cell>{{record.studentId}}</td>
+    <td mat-cell>{{record.studentName}}</td>
+  </tr>
+</table>
+<!-- [dataSource]="studentArray" -->
+
+<div class="row formFooter clear">
+  <input type="button" id="reset" name="reset" value="Reset" (click)="refreshData()" />
+</div>
