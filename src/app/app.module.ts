@@ -17,12 +17,24 @@ import { IncharchComponent } from './incharch/incharch.component';
 import { StudentServiceService } from './_services/student-service.service';
 import { LoginComponent } from './login/login.component';
 import { TokenauthService } from './tokenauth.service';
+import { VehicleResolver } from '../app/vehicleResolver';
 
 const routerArray: Routes = [
+  { path: 'staff', component: StaffComponent },
   { path: 'student', component: StudentComponent },
   { path: 'incharch', component: IncharchComponent },
-  { path: 'login', component: LoginComponent },
-  { path: '**', component: LoginComponent }
+  {
+    path: 'login', component: LoginComponent,
+    resolve: {
+      vehicle: VehicleResolver
+    }
+  },
+  {
+    path: '**', component: LoginComponent,
+    resolve: {
+      vehicle: VehicleResolver
+    }
+  }
 ];
 
 @NgModule({
@@ -48,6 +60,7 @@ const routerArray: Routes = [
   ],
   providers: [
     StudentServiceService,
+    VehicleResolver,
     {
       provide: APP_INITIALIZER,
       useFactory: startUpServiceFactory,

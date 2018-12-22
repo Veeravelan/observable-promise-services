@@ -13,7 +13,6 @@ export class TokenauthService {
 
   getToken(): Promise<any> {
     return this.httpClient.get(this.baseurl + 'generateKeypair', this.option).toPromise().then(res => {
-      console.log('promise response ------ ' , res['n']);
       return res;
     }).catch(err => err);
   }
